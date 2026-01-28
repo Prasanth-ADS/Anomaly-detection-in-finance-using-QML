@@ -1,0 +1,37 @@
+project:
+  name: "quantum-finance-anomaly"
+  seed: 42
+  debug: false
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  results: "results"
+  figures: "results/figures"
+  tables: "results/tables"
+  logs: "results/logs"
+
+data:
+  datasets:
+    - "creditcard"
+    - "paysim"
+  test_size: 0.2
+  val_size: 0.1
+
+features:
+  n_components: 10  # For PCA/Quantum compatibility
+
+models:
+  classical:
+    - "isolation_forest"
+    - "one_class_svm"
+    - "xgboost"
+    - "autoencoder"
+  quantum:
+    - "qsvm"
+    - "vqnn"
+
+quantum:
+  n_qubits: 8
+  n_layers: 2
+  backend: "default.qubit"
