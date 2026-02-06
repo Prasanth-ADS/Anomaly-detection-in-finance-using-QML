@@ -6,10 +6,10 @@ from src.utils.seed import set_seed
 from src.data.load_data import load_config, load_creditcard_data
 from src.data.preprocess import preprocess_creditcard
 from src.data.split import split_data
-from src.features.dimensionality_reduction import apply_pca
+from src.features.dimensionality_reduction import DimensionalityReducer
 from src.classical.xgboost_model import XGBoostModel
-from src.quantum.variational_qnn import VQNNTrainer
-from src.evaluation.metrics import calculate_metrics, print_metrics
+from src.quantum.variational_qnn import VQNNModel, VQNNTrainer
+from src.evaluation.metrics import get_classification_metrics, print_metrics
 
 logger = get_logger("main_pipeline")
 
@@ -39,7 +39,9 @@ def main():
     # 3. Feature Engineering / PCA
     logger.info("Step 3: Dimensionality Reduction...")
     n_components = config['features']['n_components']
-    X_pca, _ = apply_pca(X, n_components=n_components)
+    # Use new DimensionalityReducer
+    reducer = DimensionalityReducer(method='pca', n_components=n_components)
+    X_pca = reducer.fit_transform(X)
 
     # 4. Split
     logger.info("Step 4: Splitting Data...")
@@ -68,7 +70,7 @@ def main():
     y_pred_xgb = xgb.predict(X_test)
     probs_xgb = xgb.predict_proba(X_test)
     
-    metrics_xgb = calculate_metrics(y_test, y_pred_xgb, probs_xgb)
+    metrics_xgb = get_classification_metrics(y_test, y_pred_xgb, probs_xgb)
     logger.info("XGBoost Metrics:")
     print_metrics(metrics_xgb)
 
@@ -81,11 +83,15 @@ def main():
     X_test_q = X_test[:200]
     y_test_q = y_test[:200]
     
-    vqnn = VQNNTrainer(n_qubits=n_components, n_layers=config['quantum']['n_layers'], epochs=5)
+    # Instantiate Model first
+    n_layers = config['quantum']['n_layers']
+    q_model = VQNNModel(n_qubits=n_components, n_layers=n_layers, use_reuploading=True)
+    
+    vqnn = VQNNTrainer(model=q_model, epochs=5)
     vqnn.fit(X_train_q, y_train_q)
     y_pred_vqnn = vqnn.predict(X_test_q)
     
-    metrics_vqnn = calculate_metrics(y_test_q, y_pred_vqnn)
+    metrics_vqnn = get_classification_metrics(y_test_q, y_pred_vqnn)
     logger.info("VQNN Metrics:")
     print_metrics(metrics_vqnn)
 

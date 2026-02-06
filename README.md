@@ -38,7 +38,15 @@ To run the end-to-end pipeline (Data Load -> Split -> Train Classical -> Train Q
 python main.py --config src/config/config.yaml
 ```
 
-### 3. Notebooks
+### 3. Run Improved QML Benchmark
+
+To run the detailed comparison between the Optimized QML model (Data Re-uploading) and Classical Baselines:
+
+```bash
+python benchmark_qml.py
+```
+
+### 4. Notebooks
 
 Explore the notebooks in `notebooks/` for step-by-step analysis:
 
@@ -49,7 +57,7 @@ Explore the notebooks in `notebooks/` for step-by-step analysis:
 - `05_variational_qnn.ipynb`: VQNN experiments.
 - `06_results_analysis.ipynb`: Comparison plots and statistical tests.
 
-### 4. Reproducibility
+### 5. Reproducibility
 
 Run the verification script to ensure random seeds are working:
 

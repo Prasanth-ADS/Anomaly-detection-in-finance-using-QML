@@ -14,24 +14,30 @@ paths:
 data:
   datasets:
     - "creditcard"
-    - "paysim"
   test_size: 0.2
   val_size: 0.1
+  max_samples: 2000  # Enforce research constraint
+  contamination: 0.05 # Max 5% anomalies
 
 features:
-  n_components: 10  # For PCA/Quantum compatibility
+  n_components: 10  # Max features after PCA
 
 models:
   classical:
+    - "logistic_regression"
+    - "svm_rbf"
+    - "random_forest"
+    - "mlp"
     - "isolation_forest"
-    - "one_class_svm"
-    - "xgboost"
     - "autoencoder"
   quantum:
+    - "vqc"
+    - "qnn"
     - "qsvm"
-    - "vqnn"
+    - "q_autoencoder"
+    - "qgan"
 
 quantum:
   n_qubits: 8
-  n_layers: 2
+  n_layers: 3
   backend: "default.qubit"
