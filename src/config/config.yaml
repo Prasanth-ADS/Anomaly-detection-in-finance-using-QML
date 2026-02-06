@@ -20,7 +20,7 @@ data:
   contamination: 0.05 # Max 5% anomalies
 
 features:
-  n_components: 10  # Max features after PCA
+  n_components: 4  # Standardized to match Quantum Model qubits
 
 models:
   classical:

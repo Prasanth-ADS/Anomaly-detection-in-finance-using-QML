@@ -97,11 +97,23 @@ def run_research_benchmark():
 
     for name, q_model in quantum_models.items():
         logger.info(f"Evaluating Quantum: {name}")
+        
+        # Subsample for Quantum training to ensure it finishes on local simulators
+        q_train_size = min(200, len(X_train))
+        q_idx = np.random.choice(len(X_train), q_train_size, replace=False)
+        X_train_q = X_train[q_idx]
+        y_train_q = y_train[q_idx]
+        
         start_train = time.time()
-        q_model.fit(X_train, y_train)
+        if name == "Quantum AE":
+            q_model.fit(X_train_q, y_train_q) # AE only uses normal data internally if label=0
+        else:
+            q_model.fit(X_train_q, y_train_q)
         train_time = time.time() - start_train
         
         start_inf = time.time()
+        # Limit inference to test size or smaller if too slow
+        # For now, let's keep full test set (400 samples)
         y_pred = q_model.predict(X_test)
         inf_time = time.time() - start_inf
         

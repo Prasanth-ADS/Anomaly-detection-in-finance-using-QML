@@ -1,11 +1,15 @@
+import pennylane as qml
+from pennylane import numpy as np
+import time
 import torch
 import torch.nn as nn
+from src.utils.logger import get_logger
 
-# 1. Variational Quantum Classifier (VQC) using TorchLayer for stability
+logger = get_logger("quantum_models")
 class VQC_Net(nn.Module):
-    def __init__(self, n_qubits=4, n_layers=3):
+    def __init__(self, n_qubits, n_layers=3):
         super(VQC_Net, self).__init__()
-        self.dev = qml.device("default.qubit", wires=n_qubits)
+        self.dev = qml.device("lightning.qubit", wires=n_qubits)
         
         @qml.qnode(self.dev, interface='torch')
         def circuit(inputs, weights):
@@ -22,7 +26,7 @@ class VQC_Net(nn.Module):
         return (out + 1) / 2 # Map [-1, 1] to [0, 1]
 
 class VQCModel:
-    def __init__(self, n_qubits=10, n_layers=3):
+    def __init__(self, n_qubits=4, n_layers=3):
         self.model = VQC_Net(n_qubits, n_layers)
         self.criterion = nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.1)
@@ -58,7 +62,7 @@ class VQCModel:
 
 # 2. Hybrid Quantum Neural Network (QNN)
 class HybridQNN(nn.Module):
-    def __init__(self, n_qubits=10, n_layers=2, backend="default.qubit"):
+    def __init__(self, n_qubits=4, n_layers=2, backend="lightning.qubit"):
         super(HybridQNN, self).__init__()
         self.dev = qml.device(backend, wires=n_qubits)
         
@@ -82,7 +86,7 @@ class HybridQNN(nn.Module):
         return self.post_net(q_out)
 
 class QNNModel:
-    def __init__(self, n_qubits=10, n_layers=2):
+    def __init__(self, n_qubits=4, n_layers=2):
         self.model = HybridQNN(n_qubits, n_layers)
         self.criterion = nn.BCELoss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.01)
@@ -120,7 +124,7 @@ class QNNModel:
 from sklearn.svm import SVC
 
 class QSVMModel:
-    def __init__(self, n_qubits=4, backend="default.qubit"):
+    def __init__(self, n_qubits=4, backend="lightning.qubit"):
         self.n_qubits = n_qubits
         self.dev = qml.device(backend, wires=n_qubits)
         
@@ -158,7 +162,7 @@ class QSVMModel:
 
 # 4. Quantum Autoencoder
 class QAEModel:
-    def __init__(self, n_qubits=6, n_latent=2, n_layers=2, backend="default.qubit"):
+    def __init__(self, n_qubits=6, n_latent=2, n_layers=2, backend="lightning.qubit"):
         self.n_qubits = n_qubits
         self.n_latent = n_latent
         self.n_layers = n_layers
