@@ -1,0 +1,161 @@
+{
+  "random_seed": 42,
+  "original_features": 30,
+  "statistical_features": 12,
+  "interaction_features": 20,
+  "total_features": 62,
+  "feature_names": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount",
+    "V_mean",
+    "V_std",
+    "V_min",
+    "V_max",
+    "V_range",
+    "V_skew",
+    "V_kurtosis",
+    "V_q25",
+    "V_q75",
+    "V_iqr",
+    "V_positive_count",
+    "V_negative_count",
+    "V14_x_V10",
+    "V14_div_V10",
+    "V14_x_V17",
+    "V14_div_V17",
+    "V14_x_V12",
+    "V14_div_V12",
+    "V14_x_V16",
+    "V14_div_V16",
+    "V10_x_V17",
+    "V10_div_V17",
+    "V10_x_V12",
+    "V10_div_V12",
+    "V10_x_V16",
+    "V10_div_V16",
+    "V17_x_V12",
+    "V17_div_V12",
+    "V17_x_V16",
+    "V17_div_V16",
+    "V12_x_V16",
+    "V12_div_V16"
+  ],
+  "top_10_by_importance": [
+    {
+      "feature": "V14",
+      "importance": 0.1266264813706377
+    },
+    {
+      "feature": "V14_x_V10",
+      "importance": 0.11814833730356067
+    },
+    {
+      "feature": "V14_x_V12",
+      "importance": 0.10362741208745138
+    },
+    {
+      "feature": "V10_x_V17",
+      "importance": 0.07417515195211921
+    },
+    {
+      "feature": "V17",
+      "importance": 0.0626065082653353
+    },
+    {
+      "feature": "V17_x_V12",
+      "importance": 0.044686040608673414
+    },
+    {
+      "feature": "V17_x_V16",
+      "importance": 0.03788234269537392
+    },
+    {
+      "feature": "V12",
+      "importance": 0.03741498760477442
+    },
+    {
+      "feature": "V_q25",
+      "importance": 0.036226649427966155
+    },
+    {
+      "feature": "V14_x_V17",
+      "importance": 0.03569275087893587
+    }
+  ],
+  "top_10_by_correlation": [
+    {
+      "feature": "V14",
+      "correlation": 0.7501
+    },
+    {
+      "feature": "V12",
+      "correlation": 0.6761
+    },
+    {
+      "feature": "V_q25",
+      "correlation": 0.6616
+    },
+    {
+      "feature": "V_iqr",
+      "correlation": 0.653
+    },
+    {
+      "feature": "V10",
+      "correlation": 0.6414
+    },
+    {
+      "feature": "V14_x_V10",
+      "correlation": 0.6351
+    },
+    {
+      "feature": "V17",
+      "correlation": 0.6129
+    },
+    {
+      "feature": "V14_x_V12",
+      "correlation": 0.612
+    },
+    {
+      "feature": "V3",
+      "correlation": 0.5748
+    },
+    {
+      "feature": "V_std",
+      "correlation": 0.5721
+    }
+  ],
+  "engineering_steps": [
+    "Created row-wise statistical features (mean, std, skew, kurtosis, etc.)",
+    "Created interaction features (multiplication, division) for top 5 features",
+    "Computed Random Forest feature importance",
+    "Computed correlation with target"
+  ]
+}

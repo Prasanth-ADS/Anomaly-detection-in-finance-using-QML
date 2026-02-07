@@ -1,0 +1,32 @@
+{
+  "random_seed": 42,
+  "n_components": 10,
+  "original_features": 62,
+  "variance_explained": {
+    "per_component": [
+      0.4077,
+      0.1567,
+      0.1173,
+      0.1017,
+      0.0623,
+      0.0469,
+      0.0378,
+      0.0233,
+      0.0166,
+      0.0138
+    ],
+    "cumulative": 0.9842
+  },
+  "component_names": [
+    "PC1",
+    "PC2",
+    "PC3",
+    "PC4",
+    "PC5",
+    "PC6",
+    "PC7",
+    "PC8",
+    "PC9",
+    "PC10"
+  ]
+}

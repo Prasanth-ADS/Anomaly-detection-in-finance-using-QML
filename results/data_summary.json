@@ -1,0 +1,63 @@
+{
+  "source_file": "C:\\Users\\mostr\\OneDrive\\Documents\\GitHub\\Proj\\Anomaly-detection-in-finance-using-QML\\data\\raw\\creditcard.csv",
+  "original_shape": [
+    284807,
+    31
+  ],
+  "cleaned_shape": [
+    2000,
+    31
+  ],
+  "random_seed": 42,
+  "target_column": "Class",
+  "class_distribution": {
+    "normal_count": 1900,
+    "anomaly_count": 100,
+    "normal_percentage": 95.0,
+    "anomaly_percentage": 5.0
+  },
+  "features": {
+    "total": 30,
+    "names": [
+      "Time",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "Amount"
+    ]
+  },
+  "missing_values_dropped": 0,
+  "duplicates_dropped": 1081,
+  "preprocessing_steps": [
+    "Loaded raw creditcard.csv",
+    "Dropped missing values",
+    "Removed duplicates",
+    "Stratified subsampling to 2000 samples",
+    "Target anomaly ratio: 5.0%"
+  ]
+}

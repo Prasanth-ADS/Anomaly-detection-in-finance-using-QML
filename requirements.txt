@@ -1,0 +1,33 @@
+# Anomaly Detection Benchmark - Requirements
+# Python 3.9+
+
+# Core Data Science
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Machine Learning
+scikit-learn>=1.0.0
+imbalanced-learn>=0.9.0
+joblib>=1.1.0
+
+# Deep Learning
+torch>=1.10.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Quantum Machine Learning
+pennylane>=0.28.0
+qiskit>=0.39.0
+qiskit-aer>=0.11.0
+
+# Jupyter
+jupyter>=1.0.0
+jupyterlab>=3.0.0
+ipywidgets>=7.6.0
+
+# Utilities
+tqdm>=4.62.0

@@ -1,0 +1,55 @@
+{
+  "random_seed": 42,
+  "test_size": 0.2,
+  "stratified": true,
+  "target_column": "Class",
+  "training_samples": 1600,
+  "test_samples": 400,
+  "training_class_distribution": {
+    "normal": 1520,
+    "anomaly": 80,
+    "anomaly_ratio": 5.0
+  },
+  "test_class_distribution": {
+    "normal": 380,
+    "anomaly": 20,
+    "anomaly_ratio": 5.0
+  },
+  "scaler": {
+    "type": "StandardScaler",
+    "fit_on": "training_data_only"
+  },
+  "feature_count": 30,
+  "feature_names": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ]
+}
