@@ -1,0 +1,27 @@
+{
+  "Deep_MLP": {
+    "max_epochs": 50,
+    "patience": 5,
+    "stopped_epoch": 17
+  },
+  "Deep_Autoencoder": {
+    "max_epochs": 100,
+    "patience": 10,
+    "stopped_epoch": 86
+  },
+  "VAE": {
+    "max_epochs": 150,
+    "patience": 15,
+    "stopped_epoch": 47
+  },
+  "LSTM_Autoencoder": {
+    "max_epochs": 40,
+    "patience": 5,
+    "stopped_epoch": 28
+  },
+  "Deep_OCNN": {
+    "max_epochs": 40,
+    "patience": 5,
+    "stopped_epoch": 40
+  }
+}

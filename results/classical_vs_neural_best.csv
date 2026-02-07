@@ -1,0 +1,6 @@
+Metric,Best Classical,Best Neural,Winner
+Accuracy,Random_Forest (0.9950),Deep_MLP (0.9950),Neural: Deep_MLP
+Precision,Random_Forest (1.0000),Deep_MLP (1.0000),Neural: Deep_MLP
+Recall,SVM_Linear (0.9000),Deep_MLP (0.9000),Neural: Deep_MLP
+F1 Score,Random_Forest (0.9474),Deep_MLP (0.9474),Neural: Deep_MLP
+Roc Auc,Random_Forest (0.9988),Deep_MLP (0.9464),Classical: Random_Forest

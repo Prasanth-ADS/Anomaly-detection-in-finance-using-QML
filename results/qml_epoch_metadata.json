@@ -1,0 +1,27 @@
+{
+  "VQC": {
+    "max_epochs": 30,
+    "patience": 5,
+    "stopped_epoch": 30
+  },
+  "Hybrid_QNN": {
+    "max_epochs": 30,
+    "patience": 5,
+    "stopped_epoch": 30
+  },
+  "QSVM": {
+    "max_epochs": null,
+    "patience": null,
+    "stopped_epoch": null
+  },
+  "Quantum_Autoencoder": {
+    "max_epochs": 30,
+    "patience": 5,
+    "stopped_epoch": 6
+  },
+  "QGAN": {
+    "max_epochs": 30,
+    "patience": 5,
+    "stopped_epoch": 30
+  }
+}

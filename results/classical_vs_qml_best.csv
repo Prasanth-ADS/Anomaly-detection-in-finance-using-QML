@@ -1,0 +1,6 @@
+Metric,Best Classical,Best QML,Winner
+Accuracy,Random_Forest (0.9950),QSVM (0.9800),Classical: Random_Forest
+Precision,Random_Forest (1.0000),VQC (0.0500),Classical: Random_Forest
+Recall,SVM_Linear (0.9000),VQC (1.0000),QML: VQC
+F1 Score,Random_Forest (0.9474),VQC (0.0952),Classical: Random_Forest
+Roc Auc,Random_Forest (0.9988),QGAN (0.7053),Classical: Random_Forest

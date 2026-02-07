@@ -1,0 +1,6 @@
+Metric,Best Neural,Best QML,Winner
+Accuracy,Deep_MLP (0.9950),QSVM (0.9800),Neural: Deep_MLP
+Precision,Deep_MLP (1.0000),VQC (0.0500),Neural: Deep_MLP
+Recall,Deep_MLP (0.9000),VQC (1.0000),QML: VQC
+F1 Score,Deep_MLP (0.9474),VQC (0.0952),Neural: Deep_MLP
+Roc Auc,Deep_MLP (0.9464),QGAN (0.7053),Neural: Deep_MLP

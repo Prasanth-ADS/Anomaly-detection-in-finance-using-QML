@@ -1,0 +1,42 @@
+{
+  "total_models": 18,
+  "models_by_category": {
+    "classical": 8,
+    "neural": 5,
+    "qml": 5
+  },
+  "best_overall": {
+    "by_f1": {
+      "model": "Random_Forest",
+      "category": "Classical",
+      "f1_score": 0.9473684210526316
+    },
+    "by_auc": {
+      "model": "Random_Forest",
+      "category": "Classical",
+      "roc_auc": 0.9988157894736842
+    },
+    "fastest": {
+      "model": "GMM",
+      "category": "Classical",
+      "train_time": 0.0688374042510986
+    }
+  },
+  "best_per_category": {
+    "Classical": {
+      "model": "Random_Forest",
+      "f1_score": 0.9473684210526316,
+      "roc_auc": 0.9988157894736842
+    },
+    "Neural": {
+      "model": "Deep_MLP",
+      "f1_score": 0.9473684210526316,
+      "roc_auc": 0.9464473684210526
+    },
+    "QML": {
+      "model": "VQC",
+      "f1_score": 0.0952380952380952,
+      "roc_auc": 0.5957894736842105
+    }
+  }
+}
